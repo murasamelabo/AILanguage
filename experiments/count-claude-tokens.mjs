@@ -1,19 +1,15 @@
 // Anthropic の count_tokens API で、Claude の実際のトークン数を数える（無料のエンドポイント）。
 //   1. Skill の書き方 7 通り（skill-format-pilot/patterns）
 //   2. 同じ指示文の 15 言語版（language-selection/texts）
-// 使い方: node count-claude-tokens.mjs [モデル ID をカンマ区切り]
+// 使い方: node count-claude-tokens.mjs [モデル ID をカンマ区切り] [--workspace wrkspc_...]
 // API キーは環境変数 AILANG_API_KEY から読む。
-import Anthropic from '@anthropic-ai/sdk';
+import { makeClient } from './client.mjs';
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { PATTERNS, skillText } from './skill-format-pilot/lib.mjs';
 
-const models = (process.argv[2] || 'claude-fable-5-2,claude-haiku-5-5').split(',');
-const apiKey = process.env.AILANG_API_KEY;
-if (!apiKey) {
-  console.error('環境変数 AILANG_API_KEY が設定されていません。');
-  process.exit(1);
-}
-const client = new Anthropic({ apiKey, maxRetries: 5 });
+const first = process.argv[2];
+const models = (first && !first.startsWith('--') ? first : 'claude-fable-5-2,claude-haiku-5-5').split(',');
+const client = makeClient();
 
 // 空に近いメッセージの分を引いて、本文だけのトークン数にする。
 async function count(model, text) {

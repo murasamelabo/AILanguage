@@ -3,7 +3,7 @@
 // 使い方:
 //   node run-api.mjs --name main1 --models claude-fable-5-2,claude-haiku-5-5 --reps 5 --budget 15
 //   node run-api.mjs --dry-run                 # 実行せず、呼び出し回数だけ表示
-// オプション: --patterns A,B  --cases case1,case2  --effort medium  --concurrency 4
+// オプション: --patterns A,B  --cases case1,case2  --effort medium  --concurrency 4  --workspace wrkspc_...
 //
 // API キーは環境変数 AILANG_API_KEY から読む。
 // （ANTHROPIC_API_KEY という名前は Claude Code 本体の認証に影響するので使わない。）
@@ -12,6 +12,7 @@ import { mkdirSync, appendFileSync, existsSync, readFileSync } from 'node:fs';
 import { PATTERNS, promptText } from './lib.mjs';
 import { CASES } from './cases.mjs';
 import { scoreOutput } from './score.mjs';
+import { makeClient } from '../client.mjs';
 
 // 100 万トークンあたりの単価（ドル）。2026-11-03 時点の公開価格。
 const PRICE = {
@@ -45,12 +46,7 @@ console.log(
 );
 if (flag('dry-run')) process.exit(0);
 
-const apiKey = process.env.AILANG_API_KEY;
-if (!apiKey) {
-  console.error('環境変数 AILANG_API_KEY が設定されていません。環境設定に追加してからセッションを開き直してください。');
-  process.exit(1);
-}
-const client = new Anthropic({ apiKey, maxRetries: 5 });
+const client = makeClient();
 
 const dir = new URL(`./runs/${name}/`, import.meta.url);
 mkdirSync(dir, { recursive: true });
