@@ -1,0 +1,15 @@
+model	pattern	n	score_%	all_pass_%	in_tok	out_tok	out_sd	total_tok	latency_s	cost_$	top_failures
+claude-fable-5-2	A	20	100.0	100	1329	725	289	2054	6.7	0.79	-
+claude-fable-5-2	B	20	100.0	100	1101	675	268	1776	6.0	0.72	-
+claude-fable-5-2	C	20	100.0	100	917	736	302	1653	6.7	0.74	-
+claude-fable-5-2	D	20	100.0	100	1009	658	254	1667	5.8	0.69	-
+claude-fable-5-2	E	20	100.0	100	1182	750	302	1932	6.6	0.79	-
+claude-fable-5-2	F	20	99.4	95	801	708	255	1509	6.5	0.69	summary_two_sentences:1,structure:1
+claude-fable-5-2	G	20	100.0	100	1194	742	285	1936	6.5	0.79	-
+claude-haiku-5-5	A	20	99.4	95	1329	1317	554	2646	5.8	0.02	summary_two_sentences:1,structure:1
+claude-haiku-5-5	B	20	98.6	95	1101	1191	517	2292	5.6	0.01	line_format:1,finding_set:1,finding_order:1,severity:1
+claude-haiku-5-5	C	20	94.2	55	917	1331	515	2248	5.7	0.02	desc_japanese:8,summary_two_sentences:8,line_format:1,finding_set:1
+claude-haiku-5-5	D	20	97.8	80	1009	1278	457	2287	5.6	0.01	finding_order:2,summary_two_sentences:2,line_format:1,finding_set:1
+claude-haiku-5-5	E	20	96.1	80	1182	1483	541	2665	6.4	0.02	summary_two_sentences:2,structure:2,line_format:2,finding_set:2
+claude-haiku-5-5	F	20	98.1	90	801	1575	558	2376	6.9	0.02	summary_two_sentences:1,structure:1,line_format:1,finding_set:1
+claude-haiku-5-5	G	20	99.4	95	1194	1338	520	2532	5.9	0.02	summary_two_sentences:1,structure:1
