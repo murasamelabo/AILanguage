@@ -4,6 +4,16 @@
 //   特定のワークスペースに紐づいていないキーでは、anthropic-workspace-id ヘッダーが必須になる。
 import Anthropic from '@anthropic-ai/sdk';
 
+// 100 万トークンあたりの単価（ドル）: [入力, 出力]。2026-11-03 時点の公開価格。
+export const PRICE = {
+  'claude-fable-5-2': [8, 40],
+  'claude-opus-5-5': [4, 20],
+  'claude-sonnet-5-5': [2, 10],
+  'claude-haiku-5-5': [0.1, 0.5],
+};
+export const costOf = (model, usage) =>
+  (usage.input_tokens * PRICE[model][0] + usage.output_tokens * PRICE[model][1]) / 1e6;
+
 export function makeClient() {
   const apiKey = process.env.AILANG_API_KEY;
   if (!apiKey) {
