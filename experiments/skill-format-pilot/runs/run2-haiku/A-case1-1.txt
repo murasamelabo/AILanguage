@@ -1,0 +1,11 @@
+VERDICT: BLOCK
+FINDINGS:
+- [S1] src/auth.py:42 — APIキーがソースコードにハードコードされている。
+- [S1] src/db.py:88 — WHERE 句のない DELETE 文が実行され、データが消失する恐れがある。
+- [S2] src/auth_test.py:8 — (test) 本番用のパスワードがハードコードされている。
+- [S2] src/cart.py:17 — ループが最後の商品を飛ばし、価格の合計が不正になる。
+- [S2] src/price.py:5 — 平均の計算で件数に 1 を加えて割っており、平均値が誤る。
+OMITTED: 2
+SUMMARY:
+秘密情報のハードコードと WHERE 句のない DELETE 文により、S1 の指摘が 2 件ある。S2 の指摘は 3 件で、上限の 5 件に収めるため 2 件を省略した。
+COUNT: S1=2 S2=3 S3=0

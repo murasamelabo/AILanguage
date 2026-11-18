@@ -1,0 +1,8 @@
+pattern	case	subagent_tokens	tool_uses	duration_ms
+A	case1	81556	4	22838
+B	case1	76393	2	18965
+C	case1	76334	2	19023
+D	case1	76506	3	22871
+E	case1	76090	2	16703
+F	case1	77341	2	23191
+G	case1	76971	3	20802

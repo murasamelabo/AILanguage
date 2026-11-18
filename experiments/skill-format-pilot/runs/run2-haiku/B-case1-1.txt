@@ -1,0 +1,11 @@
+VERDICT: BLOCK
+FINDINGS:
+- [S1] src/auth.py:42 — APIキーがソースコードにハードコードされている
+- [S1] src/db.py:88 — DELETE文にWHERE句がなく、テーブルの全データが消えるおそれがある
+- [S2] src/auth_test.py:8 — (test) 本番用パスワードがハードコードされている
+- [S2] src/cart.py:17 — ループが最後の商品を飛ばし、合計金額が不正になる
+- [S2] src/price.py:5 — 平均の計算で件数に1を加えた値で割っている
+OMITTED: 2
+SUMMARY:
+重大度S1の問題が2件あり、WHERE句のないDELETE文と認証情報のハードコードが含まれる。S2の問題は3件あり、テストの誤り、合計計算の不具合、平均計算の不具合が含まれる。
+COUNT: S1=2 S2=3 S3=0

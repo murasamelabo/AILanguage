@@ -1,0 +1,11 @@
+VERDICT: BLOCK
+FINDINGS:
+- [S1] src/auth.py:42 — APIキー <redacted> がソースコードにハードコードされている
+- [S1] src/db.py:88 — WHERE句のない削除処理があり、データ消失の恐れがある
+- [S2] src/auth_test.py:8 — (test) 本番用パスワード <redacted> がハードコードされている
+- [S2] src/cart.py:17 — 価格の合計処理で、ループが最後の商品を読み飛ばす
+- [S2] src/price.py:5 — 平均値の計算で、件数に1を加えた値で除算している
+OMITTED: 2
+SUMMARY:
+本番用の秘密情報がソースに含まれ、WHERE句のない削除処理もあるため、重大な問題が残っている。合計と平均の計算にも誤りがあり、テストにも秘密情報が直書きされている。
+COUNT: S1=2 S2=3 S3=0

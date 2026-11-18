@@ -52,12 +52,13 @@ export function scoreOutput(text, exp) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  // ファイル名は <書き方>-<回>.txt（入力は引数で指定）または <書き方>-<入力>-<回>.txt。
   const dir = process.argv[2];
-  const exp = CASES[process.argv[3] || 'case1'].expected;
   console.log('file\tpassed\ttotal\tout_chars\tfailed_checks');
-  for (const f of readdirSync(dir).filter(f => /^[A-G]-\d+\.txt$/.test(f)).sort()) {
+  for (const f of readdirSync(dir).filter(f => /^[A-G]-(case\d+-)?\d+\.txt$/.test(f)).sort()) {
     const text = readFileSync(join(dir, f), 'utf8');
-    const c = scoreOutput(text, exp);
+    const caseName = (f.match(/-(case\d+)-/) || [])[1] || process.argv[3] || 'case1';
+    const c = scoreOutput(text, CASES[caseName].expected);
     const failed = Object.entries(c).filter(([, v]) => !v).map(([k]) => k).join(',') || '-';
     console.log([f, Object.values(c).filter(Boolean).length, Object.keys(c).length, [...text.trim()].length, failed].join('\t'));
   }

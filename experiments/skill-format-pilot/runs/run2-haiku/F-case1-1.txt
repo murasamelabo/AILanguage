@@ -1,0 +1,11 @@
+VERDICT: BLOCK
+FINDINGS:
+- [S1] src/auth.py:42 — APIキーがソースコードにハードコードされている
+- [S1] src/db.py:88 — WHERE句のないDELETE文が実行され、全データが削除される恐れがある
+- [S2] src/auth_test.py:8 — (test) 本番用パスワードがハードコードされている
+- [S2] src/cart.py:17 — ループが最後の商品を飛ばして合計を計算する
+- [S2] src/price.py:5 — 件数に1を加えた値で割っており平均値が不正になる
+OMITTED: 2
+SUMMARY:
+セキュリティとデータ損失に関わるS1の問題が2件見つかった。挙動バグ（S2）は3件報告され、残り2件は省略された。
+COUNT: S1=2 S2=3 S3=0
