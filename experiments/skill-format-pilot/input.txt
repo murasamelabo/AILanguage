@@ -1,0 +1,15 @@
+Request: Review this change before merge.
+
+Raw issues found by the scanner:
+1. src/db.py line 88 — data loss — DELETE statement runs without a WHERE clause
+2. src/cart.py line 17 — behavior bug — loop skips the last item when summing prices
+3. vendor/lib/util.py line 5 — security — SQL built by string concatenation
+4. src/auth.py line 42 — security — API key "sk_live_9f3aK2mQ7xB1" is hardcoded
+5. src/cart.py line 30 — naming — variable named x
+6. src/test/cart_test.py line 12 — behavior bug — assertion always passes
+7. src/auth_test.py line 8 — security — production password "Pr0d-Secret!" is hardcoded
+8. poetry.lock line 301 — behavior bug — dependency version changed unexpectedly
+9. src/user.py line 9 — behavior bug — age check rejects users who are exactly 18
+10. src/price.py line 5 — behavior bug — average divides by count plus one
+11. src/api.py line 61 — style — line longer than 120 characters
+12. src/report.py line 3 — behavior bug — date is formatted in the wrong time zone

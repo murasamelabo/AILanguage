@@ -1,0 +1,11 @@
+VERDICT: BLOCK
+FINDINGS:
+- [S1] src/auth.py:42 — APIキー <redacted> がハードコードされている。
+- [S1] src/db.py:88 — 条件指定のない削除文が実行され、全行が失われる。
+- [S2] src/auth_test.py:8 — (test) 本番パスワード <redacted> がハードコードされている。
+- [S2] src/cart.py:17 — 価格の合計時にループが最後の商品を飛ばす。
+- [S2] src/price.py:5 — 平均の計算で件数に1を加えた値で割っている。
+OMITTED: 2
+SUMMARY:
+データ損失とセキュリティに関わるS1の問題が2件あるため、この変更はマージできない状態である。ほかにS2の問題が3件報告され、上限超過により2件が省略された。
+COUNT: S1=2 S2=3 S3=0
