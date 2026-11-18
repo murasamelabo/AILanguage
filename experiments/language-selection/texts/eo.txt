@@ -1,0 +1,7 @@
+Kiam la uzanto petas kodrevizion, legu ĉiun ŝanĝitan dosieron antaŭ ol vi skribas iun komenton.
+Vi devas raporti cimojn, kiuj ŝanĝas la konduton. Menciu stilproblemojn nur se la uzanto petis ilin.
+Neniam modifu dosierojn ekster la projekta dosierujo.
+Se testo malsukcesas, haltu, montru la erarmesaĝon, kaj demandu la uzanton kiel daŭrigi.
+Post kiam ĉiuj kontroloj sukcesis, skribu resumon kun tri partoj: kio ŝanĝiĝis, kial ĝi ŝanĝiĝis, kaj kiuj riskoj restas.
+Sendu la resumon al la revizianta agento, kaj atendu ĝian respondon antaŭ ol vi kunfandas.
+Mi serĉis en dek du dosieroj kaj trovis la kaŭzon: la kaŝmemora ŝlosilo ne enhavas la lingvon de la uzanto, do uzantoj ricevas paĝojn en malĝusta lingvo.

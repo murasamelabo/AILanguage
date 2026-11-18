@@ -1,0 +1,7 @@
+Ketika pengguna meminta tinjauan kode, baca setiap berkas yang diubah sebelum menulis komentar apa pun.
+Kamu harus melaporkan bug yang mengubah perilaku. Sebutkan masalah gaya hanya jika pengguna memintanya.
+Jangan pernah mengubah berkas di luar direktori proyek.
+Jika sebuah tes gagal, berhenti, tampilkan pesan galat, dan tanyakan kepada pengguna cara melanjutkan.
+Setelah semua pemeriksaan lulus, tulis ringkasan dengan tiga bagian: apa yang berubah, mengapa berubah, dan risiko apa yang tersisa.
+Kirim ringkasan itu ke agen peninjau, dan tunggu jawabannya sebelum menggabungkan.
+Saya menelusuri dua belas berkas dan menemukan penyebabnya: kunci cache tidak memuat bahasa pengguna, sehingga pengguna menerima halaman dalam bahasa yang salah.

@@ -1,0 +1,7 @@
+Khi người dùng yêu cầu đánh giá mã, hãy đọc mọi tệp đã thay đổi trước khi viết bất kỳ nhận xét nào.
+Bạn phải báo cáo các lỗi làm thay đổi hành vi. Chỉ nêu vấn đề về phong cách nếu người dùng yêu cầu.
+Không bao giờ sửa các tệp nằm ngoài thư mục dự án.
+Nếu một bài kiểm thử thất bại, hãy dừng lại, hiển thị thông báo lỗi và hỏi người dùng cách tiếp tục.
+Sau khi mọi kiểm tra đều đạt, hãy viết bản tóm tắt gồm ba phần: cái gì đã thay đổi, tại sao thay đổi và còn những rủi ro nào.
+Gửi bản tóm tắt cho tác tử đánh giá và chờ câu trả lời của nó trước khi gộp.
+Tôi đã tìm trong mười hai tệp và thấy nguyên nhân: khóa bộ nhớ đệm không bao gồm ngôn ngữ của người dùng, nên người dùng nhận được trang bằng sai ngôn ngữ.

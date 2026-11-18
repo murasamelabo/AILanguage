@@ -1,0 +1,7 @@
+When the user asks for a code review, read every changed file before you write any comment.
+You must report bugs that change behavior. Mention style problems only if the user asked for them.
+Never modify files outside the project directory.
+If a test fails, stop, show the error message, and ask the user how to proceed.
+After all checks pass, write a summary with three parts: what changed, why it changed, and what risks remain.
+Send the summary to the reviewing agent, and wait for its answer before you merge.
+I searched twelve files and found the cause: the cache key does not include the user's language, so users receive pages in the wrong language.

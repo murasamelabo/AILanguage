@@ -1,0 +1,9 @@
+{
+  "name": "language-selection",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/tokenizer": "^0.0.4",
+    "gpt-tokenizer": "^2.9.0"
+  }
+}

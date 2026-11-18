@@ -1,0 +1,7 @@
+Kun käyttäjä pyytää koodikatselmointia, lue jokainen muutettu tiedosto ennen kuin kirjoitat yhtään kommenttia.
+Sinun täytyy raportoida virheet, jotka muuttavat toimintaa. Mainitse tyyliongelmat vain, jos käyttäjä pyysi niitä.
+Älä koskaan muokkaa tiedostoja projektihakemiston ulkopuolella.
+Jos testi epäonnistuu, pysähdy, näytä virheilmoitus ja kysy käyttäjältä, miten jatketaan.
+Kun kaikki tarkistukset ovat menneet läpi, kirjoita kolmiosainen yhteenveto: mikä muuttui, miksi se muuttui ja mitä riskejä jää.
+Lähetä yhteenveto katselmoivalle agentille ja odota sen vastausta ennen kuin yhdistät.
+Etsin kahdestatoista tiedostosta ja löysin syyn: välimuistin avain ei sisällä käyttäjän kieltä, joten käyttäjät saavat sivut väärällä kielellä.

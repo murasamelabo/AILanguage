@@ -1,0 +1,7 @@
+Kullanıcı kod incelemesi istediğinde, herhangi bir yorum yazmadan önce değiştirilen her dosyayı oku.
+Davranışı değiştiren hataları bildirmelisin. Üslup sorunlarından yalnızca kullanıcı istediyse söz et.
+Proje dizininin dışındaki dosyaları asla değiştirme.
+Bir test başarısız olursa dur, hata mesajını göster ve kullanıcıya nasıl devam edileceğini sor.
+Tüm denetimler geçtikten sonra üç bölümlü bir özet yaz: ne değişti, neden değişti ve hangi riskler kaldı.
+Özeti inceleyen ajana gönder ve birleştirmeden önce yanıtını bekle.
+On iki dosyayı aradım ve nedeni buldum: önbellek anahtarı kullanıcının dilini içermiyor, bu yüzden kullanıcılar sayfaları yanlış dilde alıyor.
