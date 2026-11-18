@@ -1,0 +1,47 @@
+
+## claude-fable-5-2
+pattern	all_pass	in_tok	out_tok	total_tok	cost_per_call_$	out_tok_vs_B [95%]	total_tok_vs_B [95%]	latency_s
+A	20/20	1329	725	2054	0.0396	+50 [7, 94]	+278 [234, 325]	6.7
+B	20/20	1101	675	1776	0.0358	-	-	6.0
+C	20/20	917	736	1653	0.0368	+61 [28, 98]	-123 [-155, -89]	6.7
+D	20/20	1009	658	1667	0.0344	-17 [-53, 22]	-109 [-144, -74]	5.8
+E	20/20	1182	750	1932	0.0395	+75 [42, 110]	+156 [122, 192]	6.6
+F	19/20	801	708	1509	0.0347	+33 [-9, 76]	-267 [-309, -222]	6.5
+G	20/20	1194	742	1936	0.0393	+68 [30, 107]	+161 [121, 202]	6.5
+
+失敗の内訳（書き方 入力 回: 落ちた項目）
+F case2 1: summary_two_sentences,structure
+
+## claude-haiku-5-5
+pattern	all_pass	in_tok	out_tok	total_tok	cost_per_call_$	out_tok_vs_B [95%]	total_tok_vs_B [95%]	latency_s
+A	19/20	1329	1317	2646	0.0008	+126 [52, 197]	+354 [281, 432]	5.8
+B	19/20	1101	1191	2292	0.0007	-	-	5.6
+C	11/20	917	1331	2248	0.0008	+140 [36, 238]	-44 [-148, 55]	5.7
+D	16/20	1009	1278	2287	0.0007	+87 [11, 165]	-5 [-81, 68]	5.6
+E	16/20	1182	1483	2665	0.0009	+293 [213, 367]	+374 [294, 453]	6.4
+F	18/20	801	1575	2376	0.0009	+384 [294, 471]	+84 [-10, 167]	6.9
+G	19/20	1194	1338	2532	0.0008	+147 [42, 250]	+240 [135, 341]	5.9
+
+失敗の内訳（書き方 入力 回: 落ちた項目）
+A case1 4: summary_two_sentences,structure
+B case1 3: line_format,finding_set,finding_order,severity,test_rule
+C case1 3: desc_japanese,summary_two_sentences
+C case1 4: desc_japanese,summary_two_sentences
+C case2 3: desc_japanese,summary_two_sentences
+C case2 5: desc_japanese,summary_two_sentences
+C case3 2: line_format,finding_set,finding_order,severity,count_line
+C case4 1: desc_japanese,summary_two_sentences
+C case4 4: desc_japanese,summary_two_sentences
+C case4 3: desc_japanese,summary_two_sentences
+C case4 5: desc_japanese,summary_two_sentences
+D case1 5: finding_order
+D case3 2: summary_two_sentences
+D case3 3: line_format,finding_set,finding_order,severity,count_line
+D case3 5: summary_two_sentences
+E case1 3: summary_two_sentences,structure
+E case3 2: line_format,finding_set,finding_order,severity,count_line
+E case3 4: summary_two_sentences,structure
+E case3 5: line_format,finding_set,finding_order,severity,count_line
+F case2 2: summary_two_sentences,structure
+F case3 3: line_format,finding_set,finding_order,severity,count_line
+G case4 2: summary_two_sentences,structure
