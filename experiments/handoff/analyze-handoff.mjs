@@ -35,6 +35,34 @@ for (const w of [...new Set(writes.map(r => r.w))]) {
   }
 }
 
+// 英語の自然文（en）との差。シナリオごとに量が違うので、シナリオをそろえて比べ、ブートストラップで 95% 区間を出す。
+let seed = 12345;
+const rand = () => {
+  seed = (seed * 1664525 + 1013904223) % 4294967296;
+  return seed / 4294967296;
+};
+const resample = a => a.map(() => a[Math.floor(rand() * a.length)]);
+const scenarios = [...new Set(writes.map(r => r.s))];
+const strat = (w, f, get, pick = x => x) =>
+  mean(scenarios.map(s => mean(pick(writes.filter(r => r.w === w && r.f === f && r.s === s)).map(get))));
+function vsEn(w, f, get) {
+  const base = strat(w, 'en', get);
+  const boots = [];
+  for (let i = 0; i < 2000; i++) boots.push(100 * (strat(w, f, get, resample) / strat(w, 'en', get, resample) - 1));
+  boots.sort((a, b) => a - b);
+  const p = 100 * (strat(w, f, get) / base - 1);
+  return `${p >= 0 ? '+' : ''}${p.toFixed(0)}% [${boots[49].toFixed(0)}, ${boots[1949].toFixed(0)}]`;
+}
+if (formats.includes('en')) {
+  console.log('\n## 英語の自然文との差（書き手、95% 区間）');
+  console.log('writer\tformat\tmsg_tok\tout_tok\tlatency');
+  for (const w of [...new Set(writes.map(r => r.w))]) {
+    for (const f of formats.filter(f => f !== 'en')) {
+      console.log([w, f, vsEn(w, f, r => r.message_tokens), vsEn(w, f, r => r.usage.output_tokens), vsEn(w, f, r => r.latency_ms)].join('\t'));
+    }
+  }
+}
+
 console.log('\n## 読み手（引き継ぎメッセージだけを見て質問に答える側）');
 console.log('pair\tformat\tn\tcorrect_%\tunknown_%\twrong_%\tall_correct\tcontrol_ok\tin_tok\tout_tok\tlatency_s\tpair_cost_$\tpair_total_tok');
 for (const pair of [...new Set(reads.map(r => `${r.w}:${r.rd}`))]) {

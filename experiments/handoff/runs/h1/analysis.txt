@@ -1,0 +1,77 @@
+## 書き手（引き継ぎメッセージを書く側）
+writer	format	n	msg_tok	msg_chars	out_tok	think_tok	in_tok	latency_s	cost_$
+fable	en	9	1040	2461	1043	3	1017	9.0	0.0498
+fable	ja	9	1181	1586	1196	15	1020	11.2	0.0560
+fable	tele	9	892	1888	895	3	1040	7.5	0.0441
+fable	struct	9	999	2259	1002	3	1038	8.4	0.0484
+fable	free	9	866	1830	869	3	1070	7.7	0.0433
+fable	lzh	9	1101	1358	1171	70	1023	12.7	0.0550
+fable	l0	9	987	2068	990	3	1223	8.7	0.0494
+haiku	en	15	1034	2535	1381	347	1017	5.7	0.0008
+haiku	ja	15	1273	1709	1614	341	1020	7.4	0.0009
+haiku	tele	15	958	1976	1206	247	1040	5.2	0.0007
+haiku	struct	15	1166	2642	1464	298	1038	6.1	0.0008
+haiku	free	15	1085	2313	1428	343	1070	6.1	0.0008
+haiku	lzh	15	1220	1486	1693	473	1023	8.3	0.0009
+haiku	l0	15	1131	2443	2538	1407	1223	10.3	0.0014
+
+## 英語の自然文との差（書き手、95% 区間）
+writer	format	msg_tok	out_tok	latency
+fable	ja	+14% [11, 17]	+15% [11, 18]	+25% [21, 30]
+fable	tele	-14% [-16, -12]	-14% [-16, -12]	-16% [-18, -14]
+fable	struct	-4% [-7, -1]	-4% [-7, -1]	-6% [-10, -3]
+fable	free	-17% [-19, -15]	-17% [-19, -15]	-14% [-16, -12]
+fable	lzh	+6% [2, 10]	+12% [7, 18]	+42% [36, 50]
+fable	l0	-5% [-7, -3]	-5% [-7, -3]	-3% [-6, -0]
+haiku	ja	+23% [17, 29]	+17% [10, 24]	+30% [23, 38]
+haiku	tele	-7% [-11, -3]	-13% [-18, -8]	-10% [-16, -3]
+haiku	struct	+13% [7, 19]	+6% [-1, 14]	+6% [-2, 15]
+haiku	free	+5% [-0, 10]	+3% [-2, 9]	+7% [0, 15]
+haiku	lzh	+18% [11, 25]	+23% [16, 29]	+45% [38, 55]
+haiku	l0	+9% [3, 15]	+84% [70, 98]	+80% [66, 94]
+
+## 読み手（引き継ぎメッセージだけを見て質問に答える側）
+pair	format	n	correct_%	unknown_%	wrong_%	all_correct	control_ok	in_tok	out_tok	latency_s	pair_cost_$	pair_total_tok
+fable:fable	en	9	100.0	0.0	0.0	9/9	9/9	1526	171	1.7	0.0689	3756
+fable:fable	ja	9	100.0	0.0	0.0	9/9	9/9	1668	191	1.8	0.0770	4074
+fable:fable	tele	9	100.0	0.0	0.0	9/9	9/9	1378	147	1.4	0.0610	3460
+fable:fable	struct	9	100.0	0.0	0.0	9/9	9/9	1485	163	1.6	0.0667	3687
+fable:fable	free	9	100.0	0.0	0.0	9/9	9/9	1352	173	1.6	0.0610	3463
+fable:fable	lzh	9	100.0	0.0	0.0	9/9	9/9	1587	175	1.6	0.0747	3956
+fable:fable	l0	9	100.0	0.0	0.0	9/9	9/9	1689	149	1.5	0.0689	4051
+fable:haiku	en	9	100.0	0.0	0.0	9/9	9/9	1526	425	1.9	0.0502	4010
+fable:haiku	ja	9	100.0	0.0	0.0	9/9	9/9	1668	466	2.2	0.0564	4349
+fable:haiku	tele	9	100.0	0.0	0.0	9/9	9/9	1378	421	1.8	0.0445	3734
+fable:haiku	struct	9	100.0	0.0	0.0	9/9	9/9	1485	424	2.0	0.0487	3948
+fable:haiku	free	9	100.0	0.0	0.0	9/9	9/9	1352	417	1.8	0.0436	3707
+fable:haiku	lzh	9	100.0	0.0	0.0	9/9	9/9	1587	454	2.0	0.0554	4235
+fable:haiku	l0	9	100.0	0.0	0.0	9/9	9/9	1689	485	2.1	0.0498	4387
+haiku:haiku	en	15	98.3	1.7	0.0	11/15	15/15	1520	477	2.1	0.0012	4394
+haiku:haiku	ja	15	99.1	0.4	0.4	13/15	15/15	1760	471	2.1	0.0013	4864
+haiku:haiku	tele	15	97.9	2.1	0.0	10/15	15/15	1445	515	2.3	0.0011	4205
+haiku:haiku	struct	15	99.6	0.4	0.0	14/15	15/15	1652	433	1.9	0.0012	4587
+haiku:haiku	free	15	98.3	1.7	0.0	12/15	14/15	1571	480	2.1	0.0012	4549
+haiku:haiku	lzh	15	100.0	0.0	0.0	15/15	15/15	1706	469	2.1	0.0014	4891
+haiku:haiku	l0	15	98.3	1.7	0.0	11/15	15/15	1834	573	2.5	0.0019	6167
+
+## 落ちた質問（組、書き方、シナリオ、回: 質問番号）
+haiku:haiku l0 bug 1: q8
+haiku:haiku l0 bug 4: q8
+haiku:haiku l0 bug 5: q8
+haiku:haiku ja migration 3: q16
+haiku:haiku en migration 1: q1
+haiku:haiku ja migration 5: q9
+haiku:haiku en migration 2: q1
+haiku:haiku en migration 3: q1
+haiku:haiku en migration 4: q1
+haiku:haiku tele migration 1: q1
+haiku:haiku tele migration 2: q1
+haiku:haiku tele migration 3: q1
+haiku:haiku tele migration 4: q1
+haiku:haiku tele migration 5: q1
+haiku:haiku struct migration 3: q1
+haiku:haiku free migration 1: q1
+haiku:haiku free migration 2: q17
+haiku:haiku free migration 3: q1,q15
+haiku:haiku free migration 5: q1
+haiku:haiku l0 migration 2: q16

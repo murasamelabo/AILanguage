@@ -1,1 +1,3 @@
 書き手の呼び出し 168 回、読み手の呼び出し 231 回、費用の上限 $9
+今回の費用: $4.47。集計は node analyze-handoff.mjs runs/h1
+exit=0
