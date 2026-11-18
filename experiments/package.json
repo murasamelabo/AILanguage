@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0",
     "@anthropic-ai/tokenizer": "^0.0.4",
     "gpt-tokenizer": "^2.9.0"
   }
